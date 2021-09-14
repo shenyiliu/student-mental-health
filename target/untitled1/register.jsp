@@ -114,7 +114,7 @@
 					if(password==passwordTwo){
 
 						$.ajax({
-							url:"${pageContext.request.contextPath}/user/userSelectRegister",
+							url:"${pageContext.request.contextPath}/register/userSelectRegister",
 							data:{
 								name:name,
 								mobile:mobile,
@@ -151,7 +151,7 @@
 			}else{
 				var num=1;
 				$.ajax({
-					url:"${pageContext.request.contextPath}/user/userSelectMobile",
+					url:"${pageContext.request.contextPath}/register/userSelectMobile",
 					type:"get",
 					data:{
 						mobile:mobile,
@@ -174,7 +174,7 @@
 			if (name!=""){
 				var num=1;
 				$.ajax({
-					url:"${pageContext.request.contextPath}/user/userSelectLoginA",
+					url:"${pageContext.request.contextPath}/register/userSelectLoginA",
 					type:"get",
 					data:{
 						name:name,
@@ -185,7 +185,6 @@
 							$("#name").val("");
 							num=0;
 						}
-
 					}
 				})
 			}else{

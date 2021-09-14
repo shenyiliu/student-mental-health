@@ -18,6 +18,10 @@ public class User {
     private String mobile;
     private String password;
     private String address;
+
+
+
+
     private List<Role> roles;
     private Set<String> persissionSet;//权限码
 

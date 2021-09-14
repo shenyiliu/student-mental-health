@@ -43,7 +43,7 @@ public class LogAop {
      * 
      * @param jp
      */
-    @Before("execution(* com.hbgc.controller.*.*(..))")
+    @Before("execution(public * com.hbgc.controller.*.*())")
     public void doBefore(JoinPoint jp) throws NoSuchMethodException {
         visitTime = new Date(); // 获取当前时间，就是开始访问的时间
         clazz = jp.getTarget().getClass(); // 获取当前访问的类
@@ -63,7 +63,7 @@ public class LogAop {
         }
     }
 
-    @After("execution(* com.hbgc.controller.*.*(..))")
+    @After("execution(public * com.hbgc.controller.*.*())")
     public void doAfter(JoinPoint jp) throws Exception {
         // 访问的时长
         long time = new Date().getTime() - visitTime.getTime();
@@ -91,8 +91,8 @@ public class LogAop {
         String ip = request.getRemoteAddr();
         String method = jp.getSignature().toString();
         url = request.getRequestURL().toString();
-        // 获取操作者
-        SecurityContext context = SecurityContextHolder.getContext();
+        //获取当前操作的用户
+        SecurityContext context = SecurityContextHolder.getContext();//从上下文中获取当前登录的用户
         User user = (User) context.getAuthentication().getPrincipal();
         String username = user.getUsername();
 

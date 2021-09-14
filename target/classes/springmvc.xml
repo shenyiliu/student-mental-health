@@ -19,7 +19,7 @@
     <!--开启组件扫描-->
     <context:component-scan base-package="com.hbgc.controller"/>
 <!--    <context:component-scan base-package="com.hopu.exception"/>-->
-<!--    <context:component-scan base-package="com.hopu.aoplog"/>-->
+<!--    <context:component-scan base-package="com.hbgc.aop"/>-->
 
     <!--开启mvc注解支持-->
     <mvc:annotation-driven/>
