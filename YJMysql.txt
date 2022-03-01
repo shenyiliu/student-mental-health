@@ -186,3 +186,15 @@ CREATE TABLE `yw_xljk`(
 	`jg` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL COMMENT '警告',
 	PRIMARY Key(`corrp_id`) USING BTREE
 ) CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '预警表' ROW_FORMAT = Dynamic;
+
+-- 日志表
+drop table if exists SysLog;
+create table SysLog(
+	id int(11) not null primary key auto_increment comment '主键',
+	username varchar(60) not null comment '用户的名称',
+	url varchar(120) comment '访问的网址',
+	ip varchar(20) comment '用户的ip地址',
+	method varchar(120) comment '方法的全限定方法名',
+	visitTime varchar(60) comment '访问的时间',
+	times varchar(50) comment '访问响应时长'
+);
